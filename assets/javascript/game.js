@@ -1,57 +1,35 @@
 //Create an array and the score
 var wordPlace = ["daytona", "miami", "keywest", "tampa"];
-var wins = 0;
-var loss = 0;
-var tied = 0;
+var hangWin = 0;
+var hangLoss = 0;
 var wrongLetter = [];
-var guessesLeft = 12;
+var guessesLeft = 10;
 var underScores = [];
 var userGuesses = [];
 var currentWord;
 var currentLetterIndex = 0;
 
+//function 
+function startGame(){
+}
 //Key test
 document.onkeyup = function(e) {
     var userguess = String.fromCharCode(e.keyCode).toLowerCase();
     
     console.log("user guessed: " + userguess);
 
-    // var test = getIndices("hello", "o");
+   
     //"miami".includes("a") -> true
     //"miami".includes("f") -> false
 
     if (currentWord.includes(userguess)) {
         // example: if currentWord is "miami", and user guessed "i"
         // getIndices("miami", "i") -> [1, 4]
-        // indices = [1, 4]
+        
         var indices = getIndices(currentWord, userguess);
 
-        // example: arr = ["a", "b"]
-        // arr[1] = "d" -> ["a", "d"]
-        // arr[0] = 1 -> [1, "d"]
-        // arr[0] -> 1
-        // arr[1] -> "d"
-
-        // loop through indices
-        // example: indices = [1, 4]
-        // userguess = "i"
-        // underScores = [ "_", "_", "_", "_", "_" ]
-        // indices[0] -> 1
-        // indices[1] -> 4
-        // indices[2] -> error
-        // indices length = 2
-        // start at i = 0
-        // i < 2 -> true
-        // index = indices[i] -> index = 1
-        // underScores[index] = userguess -> [ "_", "i", "_", "_", "_" ]
-        // set i = 1
-        // i < 2 -> true
-        // index = indices[i] -> index = 4
-        // underScores[index] = userguess -> [ "_", "i", "_", "_", "i" ]
-        // set i = 2
-        // i < 2 -> false
-        // exit loop
-
+      
+     //loop
         for (var i = 0; i < indices.length; i++) {
             var index = indices[i];
             underScores[index] = userguess;
@@ -91,3 +69,32 @@ function getIndices(word, letter) {
     
     return result;
 }
+
+//Update Browser 
+function updateScreen() {
+   underScores[currentWord.indices(keyword)] = keyword;
+   document.getElementById("hangUnd").innerHTML = underScores.join('');
+   document.getElementById("hangWord").innerHTML = userGuesses;
+   
+   var underScores = document.getElementById("hangUnd")
+
+            if (word[i] < -1)
+
+                guessesLeft.innerHTML = "loses point";
+
+            }
+
+            document.getElementById("getUnd").innerHTML = "underScores";
+
+            for (var i = 0; i <guessesLeft.length;) {
+
+                currentWord.innerHTML - "The answer!";
+
+    updateScreen();
+  
+
+
+}
+
+
+startGame();
